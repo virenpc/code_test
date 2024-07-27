@@ -4,8 +4,8 @@ There are two approaches for finding the word with the most occurrences of a giv
 1. In-memory approach using Java 21.(Code in [FindWordWithCharacterInMemory.java](src/main/java/com/example/demo/FindWordWithCharacterInMemory.java)
    and test cases in [FindWordWithCharacterInMemoryTest.java](src/test/java/com/example/demo/FindWordWithCharacterInMemoryTest.java))
 2. Using Apache Solr for more efficient search capabilities. Lucene (now Solr) offers a scalable way for such uses and should be used when we expect use cases and data to grow. I have used Lucene before and done performance benchmarking, conclusion was that its highly scalable and work very well for large data sets. Solr uses inverted indexing, which stores a mapping from content to its locations in a database file. This allows Solr to quickly locate and retrieve documents containing specific terms, making search operations much faster than traditional methods that scan each document sequentially.
-   (Code in [FindWordWithCharacterInMemory.java](src/main/java/com/example/demo/FindWordWithCharacterInSolr.java)
-   and test cases in [FindWordWithCharacterInMemoryTest.java](src/test/java/com/example/demo/FindWordWithCharacterInSolr.java))
+   (Code in [FindWordWithCharacterInSolr.java](src/main/java/com/example/demo/FindWordWithCharacterInSolr.java)
+   and test cases in [FindWordWithCharacterInSolrTest.java](src/test/java/com/example/demo/FindWordWithCharacterInSolrTest.java))
 ### Assumptions
 
 - The input statement is a single string.
