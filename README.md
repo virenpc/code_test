@@ -2,13 +2,7 @@
 
 This application provides two approaches for finding the word with the most occurrences of a given character in a statement:
 1. In-memory approach using Java 21.
-2. Using Apache Solr for more efficient search capabilities. Lucene (now Solr) offers a scalable way for such uses and should be used when we expect use cases and data to grow. I have used Lucene before and done performance benchmarking, conclusion was that its highly scalable and work very well for large data sets.
-
-## In-Memory Approach (Java 21)
-
-### Description
-
-The in-memory approach processes the input statement directly in Java to find the word with the most occurrences of the given character. In case of ties, it selects the longest word, and if there is still a tie, it selects the first occurrence.
+2. Using Apache Solr for more efficient search capabilities. Lucene (now Solr) offers a scalable way for such uses and should be used when we expect use cases and data to grow. I have used Lucene before and done performance benchmarking, conclusion was that its highly scalable and work very well for large data sets. Solr uses inverted indexing, which stores a mapping from content to its locations in a database file. This allows Solr to quickly locate and retrieve documents containing specific terms, making search operations much faster than traditional methods that scan each document sequentially.
 
 ### Assumptions
 
@@ -33,3 +27,11 @@ The test cases are implemented in the class `FindWordWithCharacterInMemoryTest.j
 | No Occurrences                         | "This is a very long sentence and I want to educate everyone in this whole crazy world…"      | 'x'             | ""              | The character 'x' is not present in any word.                                                     |
 | Multiple Words Same Count and Length   | "This test case checks multiple words with same number of given character and same length tied together" | 't'             | test            | Both "test" and "together" have the same number of occurrences and length, but "test" appears first.  |
 
+
+## Solr related notes
+
+- https://solr.apache.org/downloads.html is offical site to download
+- Commands to start and create your_core <pre>solr start</pre> <pre>solr create -c your_core</pre>
+- Might need to unload and create core again when testing with changing input/documents
+- http://localhost:8983/solr/#/ is the link to admin screen when installed. Look like this on my machine: ![Solr Admin Interface](solr_admin.png)
+- Solr commands on my machine ![Solr Commands](solr_commands.png)
