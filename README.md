@@ -1,4 +1,4 @@
-# Word Finder Application (Problem 1)
+# Problem 1 : Word finder
 
 This application provides two approaches for finding the word with the most occurrences of a given character in a statement:
 1. In-memory approach using Java 21.
