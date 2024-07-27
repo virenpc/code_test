@@ -27,6 +27,8 @@ The test cases are implemented in the class `FindWordWithCharacterInMemoryTest.j
 | No Occurrences                         | "This is a very long sentence and I want to educate everyone in this whole crazy world…"      | 'x'             | ""              | The character 'x' is not present in any word.                                                     |
 | Multiple Words Same Count and Length   | "This test case checks multiple words with same number of given character and same length tied together" | 't'             | test            | Both "test" and "together" have the same number of occurrences and length, but "test" appears first.  |
 
+Test cases have passed in code committed: ![Test cases passed](test_cases_pass.png)
+
 
 ## Solr related notes
 
