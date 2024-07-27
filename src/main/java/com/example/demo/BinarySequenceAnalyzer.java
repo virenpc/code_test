@@ -7,7 +7,6 @@ public class BinarySequenceAnalyzer {
         }
 
         String binaryRep = Integer.toBinaryString(inputNumber);
-        System.out.println("Binary representation of " + inputNumber + ": " + binaryRep); // Debug
         int maxSeqLength = 0;
         int currentSeqLength = 0;
         int longestSeqStartPos = -1;
@@ -26,10 +25,6 @@ public class BinarySequenceAnalyzer {
             } else {
                 currentSeqLength = 0;
             }
-            // Debugging information
-            System.out.println("i: " + i + ", char: " + binaryRep.charAt(i) + ", currentSeqLength: " + currentSeqLength
-                    + ", maxSeqLength: " + maxSeqLength + ", tempSeqStartPos: " + tempSeqStartPos
-                    + ", longestSeqStartPos: " + longestSeqStartPos);
         }
 
         return longestSeqStartPos;

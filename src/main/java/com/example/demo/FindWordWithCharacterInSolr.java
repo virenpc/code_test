@@ -40,10 +40,6 @@ public class FindWordWithCharacterInSolr {
                 results.addAll((List<String>) fieldValue);
             }
         });
-
-        // Debugging output
-        results.forEach(word -> System.out.println("Word: " + word + ", Count: " + word.chars().filter(c -> c == inputChar).count() + ", Length: " + word.length()));
-
         String bestWord = "";
         long maxCount = -1;
         int bestWordLength = -1;
