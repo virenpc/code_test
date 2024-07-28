@@ -3,7 +3,7 @@
 There are two approaches for finding the word with the most occurrences of a given character in a statement:
 1. In-memory approach using Java 21.(Code in [FindWordWithCharacterInMemory.java](src/main/java/com/example/demo/FindWordWithCharacterInMemory.java)
    and test cases in [FindWordWithCharacterInMemoryTest.java](src/test/java/com/example/demo/FindWordWithCharacterInMemoryTest.java))
-2. Using Apache Solr for more efficient search capabilities. Lucene (now Solr) offers a scalable way for such uses and should be used when we expect use cases and data to grow. I have used Lucene before and done performance benchmarking, conclusion was that its highly scalable and work very well for large data sets. Solr uses inverted indexing, which stores a mapping from content to its locations in a database file. This allows Solr to quickly locate and retrieve documents containing specific terms, making search operations much faster than traditional methods that scan each document sequentially.
+2. Using Apache Solr for more efficient search capabilities. Lucene (now Solr) offers a scalable way for such uses and should be used when we expect use cases and data to grow. I have used Lucene before and done performance benchmarking. Conclusion was that its highly scalable and works very well for large data sets. Solr uses inverted indexing, which stores a mapping from content to its locations in a database file. This allows Solr to quickly locate and retrieve documents containing specific terms, making search operations much faster than traditional methods that scan each document sequentially.
    (Code in [FindWordWithCharacterInSolr.java](src/main/java/com/example/demo/FindWordWithCharacterInSolr.java)
    and test cases in [FindWordWithCharacterInSolrTest.java](src/test/java/com/example/demo/FindWordWithCharacterInSolrTest.java))
 ### Assumptions
@@ -58,5 +58,14 @@ The test cases are implemented in the class `BinarySequenceAnalyzerTest.java`
 | Case 4                                 | 2730  | 1               | The binary representation of 2730 is 101010101010. The longest continuous 1s start at position 1. |
 
 Test cases have passed in code committed: ![Test cases passed](binary_test_pass.png)
+
+## Assumptions Made in the Code
+
+- Non-negative Input
+- 1-Indexed Position
+- No Leading Zeros
+- If there are multiple sequences of `1`s of the same maximum length, the function returns the starting position of the first such sequence encountered.
+- If the input number is `0`, the function returns `0` as there are no `1`s
+
 
 
